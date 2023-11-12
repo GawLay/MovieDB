@@ -17,7 +17,7 @@ class MovieDetailRepositoryImpl(
         emit(State.loading())
         try {
             val data = iApiHelper.getMovieDetail(movieId = movieId)
-            emit(State.Success(data))
+            emit(State.success(data))
         } catch (e: HttpException) {
             emit(State.failed(e.message, e.code()))
         } catch (e: Exception) {

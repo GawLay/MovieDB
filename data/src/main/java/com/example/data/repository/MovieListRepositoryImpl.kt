@@ -24,7 +24,7 @@ class MovieListRepositoryImpl(
         emit(State.loading())
         try {
             val data = apiHelperImpl.getPopularMovies()
-            emit(State.Success(data))
+            emit(State.success(data))
         } catch (e: HttpException) {
             emit(State.failed(e.message, e.code()))
         } catch (e: Exception) {
@@ -36,7 +36,7 @@ class MovieListRepositoryImpl(
         emit(State.loading())
         try {
             val data = apiHelperImpl.getUpcomingMovies()
-            emit(State.Success(data))
+            emit(State.success(data))
         } catch (e: HttpException) {
             emit(State.failed(e.message, e.code()))
         } catch (e: Exception) {
